@@ -17,6 +17,44 @@
     return [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Application Support/Blizzard/Warcraft III/Maps/Download"];
 }
 
++ (double) parseScore:(NSString *)string {
+    if ([string containsString:@"Million"]) {
+        return [string floatValue] * 1000000;
+    }
+    return 0.0;
+}
+
++ (NSString *)highScore {
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSDirectoryEnumerator *enumerator = [manager enumeratorAtPath:[self saveDir]];
+    NSMutableArray <NSString *> *found = [[NSMutableArray alloc] init];
+    for (NSString *map in enumerator) {
+        if ([map hasPrefix:@"Code"]) {
+            NSCharacterSet *delimeters = [NSCharacterSet characterSetWithCharactersInString:@"-_"];
+            NSArray *components = [map componentsSeparatedByCharactersInSet:delimeters];
+            NSString *score = components[2];
+            [found addObject:score];
+        }
+    }
+    
+    NSArray <NSString *> *sorted = [found sortedArrayUsingComparator:^NSComparisonResult(NSString *a, NSString *b) {
+        double A = [self parseScore:a];
+        double B = [self parseScore:b];
+        
+        if (A > B) {
+            return (NSComparisonResult)NSOrderedDescending;
+        }
+     
+        if (A < B) {
+            return (NSComparisonResult)NSOrderedAscending;
+        }
+        return (NSComparisonResult)NSOrderedSame;
+    }];
+
+    return [[sorted lastObject] stringByDeletingPathExtension];
+    
+}
+
 + (NSString *)latestVersionOnDisk  {
     NSFileManager *manager = [NSFileManager defaultManager];
     NSDirectoryEnumerator *enumerator = [manager enumeratorAtPath:[self mapDir]];

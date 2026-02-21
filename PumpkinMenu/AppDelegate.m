@@ -28,6 +28,8 @@
     _item = [bar statusItemWithLength:70];
     _item.title = [NSString stringWithFormat:@"🎃 %@", latestVersion];
     _item.menu = _menu;
+    _map.title = [NSString stringWithFormat:@"Installed: %@", latestVersion];
+    _save.title = [TDPumpkin highScore];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

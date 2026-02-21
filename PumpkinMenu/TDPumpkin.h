@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)saveDir;
 + (NSString *)mapDir;
++ (NSString *)highScore;
 + (NSString *)latestVersionOnDisk;
 
 @end
