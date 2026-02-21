@@ -6,18 +6,23 @@
 //
 
 #import "AppDelegate.h"
+#import "TDPumpkin.h"
 
 @interface AppDelegate ()
 
 @property (strong) IBOutlet NSWindow *window;
+
+@property (strong) NSStatusItem *item;
+
 @end
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+    NSStatusBar *bar = [NSStatusBar systemStatusBar];
+    _item = [bar statusItemWithLength:70];
+    _item.title = [NSString stringWithFormat:@"🎃 %@", [TDPumpkin latestVersionOnDisk]];
 }
-
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
