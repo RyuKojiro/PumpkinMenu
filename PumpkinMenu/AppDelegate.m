@@ -21,9 +21,12 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    NSString *latestVersion = [TDPumpkin latestVersionOnDisk];
+    latestVersion = latestVersion ? latestVersion : @"Not found!";
+    
     NSStatusBar *bar = [NSStatusBar systemStatusBar];
     _item = [bar statusItemWithLength:70];
-    _item.title = [NSString stringWithFormat:@"🎃 %@", [TDPumpkin latestVersionOnDisk]];
+    _item.title = [NSString stringWithFormat:@"🎃 %@", latestVersion];
     _item.menu = _menu;
 }
 
