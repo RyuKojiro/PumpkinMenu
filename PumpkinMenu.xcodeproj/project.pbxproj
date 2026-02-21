@@ -11,6 +11,7 @@
 		E69611EE2F49800000E2E3A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E69611ED2F49800000E2E3A0 /* Assets.xcassets */; };
 		E69611F12F49800000E2E3A0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E69611EF2F49800000E2E3A0 /* MainMenu.xib */; };
 		E69611F32F49800000E2E3A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E69611F22F49800000E2E3A0 /* main.m */; };
+		E69611FC2F4980C400E2E3A0 /* TDPumpkin.m in Sources */ = {isa = PBXBuildFile; fileRef = E69611FB2F4980C400E2E3A0 /* TDPumpkin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,8 @@
 		E69611F02F49800000E2E3A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E69611F22F49800000E2E3A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E69611F42F49800000E2E3A0 /* PumpkinMenu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PumpkinMenu.entitlements; sourceTree = "<group>"; };
+		E69611FA2F4980C400E2E3A0 /* TDPumpkin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDPumpkin.h; sourceTree = "<group>"; };
+		E69611FB2F4980C400E2E3A0 /* TDPumpkin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDPumpkin.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,8 @@
 				E69611EF2F49800000E2E3A0 /* MainMenu.xib */,
 				E69611F22F49800000E2E3A0 /* main.m */,
 				E69611F42F49800000E2E3A0 /* PumpkinMenu.entitlements */,
+				E69611FA2F4980C400E2E3A0 /* TDPumpkin.h */,
+				E69611FB2F4980C400E2E3A0 /* TDPumpkin.m */,
 			);
 			path = PumpkinMenu;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 			files = (
 				E69611F32F49800000E2E3A0 /* main.m in Sources */,
 				E69611EC2F497FFE00E2E3A0 /* AppDelegate.m in Sources */,
+				E69611FC2F4980C400E2E3A0 /* TDPumpkin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
