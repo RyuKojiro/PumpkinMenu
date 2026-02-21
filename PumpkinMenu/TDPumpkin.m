@@ -20,7 +20,10 @@
 + (double) parseScore:(NSString *)string {
     if ([string containsString:@"Million"]) {
         return [string floatValue] * 1000000;
+    } else if ([string containsString:@"Billion"]) {
+        return [string floatValue] * 1000000000;
     }
+
     return 0.0;
 }
 
