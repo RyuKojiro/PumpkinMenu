@@ -28,10 +28,10 @@
     NSFileManager *manager = [NSFileManager defaultManager];
     NSDirectoryEnumerator *enumerator = [manager enumeratorAtPath:[self saveDir]];
     NSMutableArray <NSString *> *found = [[NSMutableArray alloc] init];
-    for (NSString *map in enumerator) {
-        if ([map hasPrefix:@"Code"]) {
+    for (NSString *save in enumerator) {
+        if ([save hasPrefix:@"Code"]) {
             NSCharacterSet *delimeters = [NSCharacterSet characterSetWithCharactersInString:@"-_"];
-            NSArray *components = [map componentsSeparatedByCharactersInSet:delimeters];
+            NSArray *components = [save componentsSeparatedByCharactersInSet:delimeters];
             NSString *score = components[2];
             [found addObject:score];
         }
