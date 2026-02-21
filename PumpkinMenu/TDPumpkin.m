@@ -9,11 +9,13 @@
 
 @implementation TDPumpkin
 
++ (NSString *)mapDir {
+    return [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Application Support/Blizzard/Warcraft III/Maps/Download"];
+}
+
 + (NSString *)latestVersionOnDisk  {
-    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Application Support/Blizzard/Warcraft III/Maps/Download"];
-    
     NSFileManager *manager = [NSFileManager defaultManager];
-    NSDirectoryEnumerator *enumerator = [manager enumeratorAtPath:path];
+    NSDirectoryEnumerator *enumerator = [manager enumeratorAtPath:[self mapDir]];
     NSMutableArray <NSString *> *found = [[NSMutableArray alloc] init];
     for (NSString *map in enumerator) {
         if ([map hasPrefix:@"PumpkinTD"]) {

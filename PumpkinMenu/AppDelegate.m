@@ -10,9 +10,11 @@
 
 @interface AppDelegate ()
 
-@property (strong) IBOutlet NSWindow *window;
-
+@property (strong) IBOutlet NSMenu *menu;
 @property (strong) NSStatusItem *item;
+
+@property (strong) IBOutlet NSMenuItem *save;
+@property (strong) IBOutlet NSMenuItem *map;
 
 @end
 
@@ -22,6 +24,7 @@
     NSStatusBar *bar = [NSStatusBar systemStatusBar];
     _item = [bar statusItemWithLength:70];
     _item.title = [NSString stringWithFormat:@"🎃 %@", [TDPumpkin latestVersionOnDisk]];
+    _item.menu = _menu;
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -33,5 +36,10 @@
     return YES;
 }
 
+- (IBAction)openMapDir:(id)sender {
+    NSURL *url = [NSURL fileURLWithPath:[TDPumpkin mapDir]];
+    NSWorkspace *w = [NSWorkspace sharedWorkspace];
+    [w openURL:url];
+}
 
 @end
