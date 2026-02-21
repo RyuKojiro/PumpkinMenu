@@ -20,6 +20,10 @@
 
 @implementation AppDelegate
 
+- (IBAction)quit:(id)sender {
+    [[NSApplication sharedApplication] terminate:self];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     NSString *latestVersion = [TDPumpkin latestVersionOnDisk];
     latestVersion = latestVersion ? latestVersion : @"Not found!";

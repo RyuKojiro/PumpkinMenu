@@ -696,6 +696,12 @@
                         <action selector="openSaveDir:" target="Voe-Tx-rLC" id="top-a7-fbp"/>
                     </connections>
                 </menuItem>
+                <menuItem isSeparatorItem="YES" id="PTL-zU-zKc"/>
+                <menuItem title="Quit PumpkinMenu" keyEquivalent="q" id="js3-R3-FRY">
+                    <connections>
+                        <action selector="quit:" target="Voe-Tx-rLC" id="3IB-H5-Syf"/>
+                    </connections>
+                </menuItem>
             </items>
             <point key="canvasLocation" x="44" y="238.5"/>
         </menu>
