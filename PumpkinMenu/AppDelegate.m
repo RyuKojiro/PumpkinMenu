@@ -57,4 +57,12 @@
     [w openURL:url];
 }
 
+- (IBAction)copyLoadCode:(id)sender {
+    NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
+    
+    NSString *string = [TDPumpkin loadCode];
+    [pasteboard clearContents];
+    [pasteboard setString:string forType:NSPasteboardTypeString];
+}
+
 @end

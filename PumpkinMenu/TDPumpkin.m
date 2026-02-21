@@ -24,6 +24,31 @@
     return 0.0;
 }
 
++ (NSString *)loadCode {
+    NSString *dir = [self saveDir];
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSDirectoryEnumerator *enumerator = [manager enumeratorAtPath:dir];
+    NSMutableArray <NSString *> *found = [[NSMutableArray alloc] init];
+    for (NSString *save in enumerator) {
+        if ([save containsString:[self highScore]]) {
+            NSString *fullPath = [dir stringByAppendingPathComponent:save];
+            NSError *e = nil;
+            NSString *saveData = [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:&e];
+            assert(!e);
+            
+            NSArray <NSString *> *lines = [saveData componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+            for (NSString *line in lines) {
+                if ([line containsString:@"call Preload( \""] && ![line containsString:@"call Preload( \"---"]) {
+                    NSArray <NSString *> *parts = [line componentsSeparatedByString:@"\""];
+                    return parts[1];
+                }
+            }
+        }
+    }
+    
+    return nil;
+}
+
 + (NSString *)highScore {
     NSFileManager *manager = [NSFileManager defaultManager];
     NSDirectoryEnumerator *enumerator = [manager enumeratorAtPath:[self saveDir]];

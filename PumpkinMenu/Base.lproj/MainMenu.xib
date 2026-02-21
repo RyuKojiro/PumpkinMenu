@@ -697,6 +697,11 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="PTL-zU-zKc"/>
+                <menuItem title="Copy Load Code" keyEquivalent="c" id="RNd-Eq-1fl">
+                    <connections>
+                        <action selector="copyLoadCode:" target="Voe-Tx-rLC" id="Yt7-iM-fdT"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Quit PumpkinMenu" keyEquivalent="q" id="js3-R3-FRY">
                     <connections>
                         <action selector="quit:" target="Voe-Tx-rLC" id="3IB-H5-Syf"/>

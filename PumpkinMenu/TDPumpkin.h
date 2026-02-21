@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)highScore;
 + (NSString *)latestVersionOnDisk;
 
++ (NSString *)loadCode;
+
 @end
 
 NS_ASSUME_NONNULL_END
