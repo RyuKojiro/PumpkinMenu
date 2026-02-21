@@ -692,6 +692,9 @@
                 </menuItem>
                 <menuItem title="save" id="GwM-Lk-tsc">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="openSaveDir:" target="Voe-Tx-rLC" id="top-a7-fbp"/>
+                    </connections>
                 </menuItem>
             </items>
             <point key="canvasLocation" x="44" y="238.5"/>

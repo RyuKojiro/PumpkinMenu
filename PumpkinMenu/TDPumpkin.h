@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TDPumpkin : NSObject
 
++ (NSString *)saveDir;
 + (NSString *)mapDir;
 + (NSString *)latestVersionOnDisk;
 

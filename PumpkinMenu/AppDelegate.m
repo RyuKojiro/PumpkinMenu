@@ -45,4 +45,10 @@
     [w openURL:url];
 }
 
+- (IBAction)openSaveDir:(id)sender {
+    NSURL *url = [NSURL fileURLWithPath:[TDPumpkin saveDir]];
+    NSWorkspace *w = [NSWorkspace sharedWorkspace];
+    [w openURL:url];
+}
+
 @end
