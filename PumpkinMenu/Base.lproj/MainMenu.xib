@@ -697,7 +697,7 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="PTL-zU-zKc"/>
-                <menuItem title="Launch WC3" id="flh-wS-Vvq">
+                <menuItem title="Launch Warcraft III" id="flh-wS-Vvq">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="launchGame:" target="Voe-Tx-rLC" id="gOc-TP-Jh0"/>
