@@ -28,7 +28,6 @@
     NSString *dir = [self saveDir];
     NSFileManager *manager = [NSFileManager defaultManager];
     NSDirectoryEnumerator *enumerator = [manager enumeratorAtPath:dir];
-    NSMutableArray <NSString *> *found = [[NSMutableArray alloc] init];
     for (NSString *save in enumerator) {
         if ([save containsString:[self highScore]]) {
             NSString *fullPath = [dir stringByAppendingPathComponent:save];
