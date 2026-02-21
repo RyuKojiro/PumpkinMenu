@@ -24,7 +24,7 @@
         return [string floatValue] * 1000000000;
     }
 
-    return 0.0;
+    return [string floatValue];
 }
 
 + (NSString *)loadCode {
