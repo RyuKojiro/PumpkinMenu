@@ -697,6 +697,12 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="PTL-zU-zKc"/>
+                <menuItem title="Launch WC3" id="flh-wS-Vvq">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="launchGame:" target="Voe-Tx-rLC" id="gOc-TP-Jh0"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Copy Load Code" keyEquivalent="c" id="RNd-Eq-1fl">
                     <connections>
                         <action selector="copyLoadCode:" target="Voe-Tx-rLC" id="Yt7-iM-fdT"/>

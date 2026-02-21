@@ -65,4 +65,10 @@
     [pasteboard setString:string forType:NSPasteboardTypeString];
 }
 
+- (IBAction)launchGame:(id)sender {
+    NSURL *url = [NSURL fileURLWithPath:[TDPumpkin gamePath]];
+    NSWorkspace *w = [NSWorkspace sharedWorkspace];
+    [w openURL:url];
+}
+
 @end

@@ -9,6 +9,10 @@
 
 @implementation TDPumpkin
 
++ (NSString *)gamePath {
+    return @"/Applications/Warcraft III/_retail_/x86_64/Warcraft III.app";
+}
+
 + (NSString *)saveDir {
     return [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Application Support/Blizzard/Warcraft III/CustomMapData/PumpkinTD"];
 }

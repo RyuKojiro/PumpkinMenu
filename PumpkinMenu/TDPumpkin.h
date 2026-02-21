@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)latestVersionOnDisk;
 
 + (NSString *)loadCode;
++ (NSString *)gamePath;
 
 @end
 
