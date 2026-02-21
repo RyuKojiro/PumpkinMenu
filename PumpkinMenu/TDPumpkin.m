@@ -14,18 +14,30 @@
     
     NSFileManager *manager = [NSFileManager defaultManager];
     NSDirectoryEnumerator *enumerator = [manager enumeratorAtPath:path];
+    NSMutableArray <NSString *> *found = [[NSMutableArray alloc] init];
     for (NSString *map in enumerator) {
         if ([map hasPrefix:@"PumpkinTD"]) {
             NSCharacterSet *delimeters = [NSCharacterSet characterSetWithCharactersInString:@"-_"];
             NSArray *components = [map componentsSeparatedByCharactersInSet:delimeters];
             NSString *version = components[1];
-            NSString *region = components[2];
+            //NSString *region = components[2];
             
-            return version;
+            [found addObject:version];
         }
     }
     
-    return nil;
+    NSArray <NSString *> *sorted = [found sortedArrayUsingComparator:^NSComparisonResult(NSString *a, NSString *b) {
+        if ([[a substringFromIndex:1] floatValue] > [[b substringFromIndex:1] floatValue]) {
+            return (NSComparisonResult)NSOrderedDescending;
+        }
+     
+        if ([[a substringFromIndex:1] floatValue] < [[b substringFromIndex:1] floatValue]) {
+            return (NSComparisonResult)NSOrderedAscending;
+        }
+        return (NSComparisonResult)NSOrderedSame;
+    }];
+
+    return [sorted lastObject];
 }
 
 @end
